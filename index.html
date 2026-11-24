@@ -1,0 +1,32 @@
+---
+layout: default
+---
+<section class="intro" aria-labelledby="name">
+  <p class="eyebrow"><span class="small-rule" aria-hidden="true"></span>{{ site.data.profile.role | escape }}</p>
+  <h1 id="name">{{ site.data.profile.name | escape }}<span class="name-dot" aria-hidden="true">.</span></h1>
+  <p class="intro-line">{{ site.data.profile.intro | escape }}</p>
+  <div class="profile-links" aria-label="Contact and profiles">
+    {% if site.data.profile.email and site.data.profile.email != '' %}<a class="email" href="mailto:{{ site.data.profile.email | escape }}">{{ site.data.profile.email | escape }}</a>{% else %}<span class="email unset" aria-disabled="true">you@example.com</span>{% endif %}
+    <span class="link-divider" aria-hidden="true"></span>
+    {% if site.data.profile.resume and site.data.profile.resume != '' %}<a href="{{ site.data.profile.resume | relative_url | escape }}">Resume <span aria-hidden="true">↗</span></a>{% else %}<span class="unset" aria-disabled="true">Resume <span aria-hidden="true">↗</span></span>{% endif %}
+    {% if site.data.profile.github and site.data.profile.github != '' %}<a href="{{ site.data.profile.github | escape }}">GitHub <span aria-hidden="true">↗</span></a>{% else %}<span class="unset" aria-disabled="true">GitHub <span aria-hidden="true">↗</span></span>{% endif %}
+    {% if site.data.profile.linkedin and site.data.profile.linkedin != '' %}<a href="{{ site.data.profile.linkedin | escape }}">LinkedIn <span aria-hidden="true">↗</span></a>{% else %}<span class="unset" aria-disabled="true">LinkedIn <span aria-hidden="true">↗</span></span>{% endif %}
+  </div>
+</section>
+<section id="about" class="content-section" aria-labelledby="about-title">
+  <div class="section-heading"><h2 id="about-title">About me</h2><span class="section-index" aria-hidden="true">01</span></div>
+  <div class="prose about-copy">{% capture about %}{% include about.md %}{% endcapture %}{{ about | markdownify }}</div>
+</section>
+<section id="posts" class="content-section" aria-labelledby="posts-title">
+  <div class="section-heading"><h2 id="posts-title">Posts &amp; work</h2><span class="section-index" aria-hidden="true">02</span></div>
+  <p class="section-intro">Notes, projects, and things worth sharing.</p>
+  {% if site.posts.size > 0 %}
+    {% assign featured = site.posts | where: 'featured', true %}
+    {% assign regular = site.posts | where_exp: 'post', 'post.featured != true' %}
+    {% assign selected = featured | concat: regular | slice: 0, 5 %}
+    {% include post-list.html posts=selected %}
+    {% if site.posts.size > 5 %}<a class="text-link archive-link" href="{{ '/posts/' | relative_url }}">All posts →</a>{% endif %}
+  {% else %}
+    <div class="empty-state"><span class="empty-symbol" aria-hidden="true">[&nbsp; ]</span><div><p>Nothing here just yet.</p><p>New notes and selected work will appear here.</p></div></div>
+  {% endif %}
+</section>

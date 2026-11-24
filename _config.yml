@@ -1,0 +1,21 @@
+title: Personal portfolio
+description: Software, notes, and selected work.
+url: https://muaazwahid.github.io
+baseurl: ""
+timezone: America/Los_Angeles
+markdown: kramdown
+highlighter: rouge
+permalink: /posts/:title/
+theme: null
+future: false
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+      kind: Note
+      featured: false
+exclude:
+  - README.md
+  - LICENSE

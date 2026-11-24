@@ -1,0 +1,9 @@
+---
+layout: default
+title: All posts
+---
+<section class="archive" aria-labelledby="archive-title">
+  <a class="back-link" href="{{ '/' | relative_url }}">← Home</a>
+  <div class="article-header"><p class="eyebrow">The archive</p><h1 id="archive-title">Posts &amp; work</h1><p class="article-description">Notes, projects, and things worth sharing.</p></div>
+  {% if site.posts.size > 0 %}{% include post-list.html posts=site.posts %}{% else %}<p class="empty-state">Nothing here just yet. Check back soon.</p>{% endif %}
+</section>

@@ -1,0 +1,8 @@
+# Leave contact values empty until they are ready.
+name: Your Name
+role: Software engineer
+intro: A place for my work, ideas, and things I’m learning.
+email: ""
+resume: "" # /assets/resume.pdf or an https:// URL
+github: "" # https://github.com/your-username
+linkedin: "" # https://www.linkedin.com/in/your-username/
