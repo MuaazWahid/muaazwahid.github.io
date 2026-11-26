@@ -68,13 +68,11 @@ h1 { font-family: Georgia, "Times New Roman", serif; font-weight: 400; font-size
 .profile-links a { text-decoration: none; padding: 5px 0; }
 .profile-links a:hover { text-decoration: underline; }
 .profile-links .email { font-size: 14px; overflow-wrap: anywhere; }
-.profile-links a span, .unset span { margin-left: 2px; color: var(--muted); }
 .link-divider { width: 1px; height: 14px; background: var(--line); }
 .unset { color: var(--muted); cursor: default; }
 .content-section { border-top: 1px solid var(--line); padding: 34px 0 37px; scroll-margin-top: 28px; }
 .section-heading { display: flex; align-items: center; justify-content: space-between; margin-bottom: 23px; }
 .section-heading h2 { font-size: 15px; font-weight: 600; letter-spacing: -.01em; margin: 0; }
-.section-index { font: 12px/1.5 "SFMono-Regular", Consolas, "Liberation Mono", monospace; color: var(--muted); }
 .about-copy { max-width: 620px; }
 .about-copy p { margin-bottom: 16px; color: var(--muted); }
 .about-copy p:last-child { margin-bottom: 0; }
@@ -97,7 +95,6 @@ h1 { font-family: Georgia, "Times New Roman", serif; font-weight: 400; font-size
 .text-link { font-size: 14px; color: var(--accent); }
 .archive-link { display: inline-block; margin-top: 24px; }
 .site-footer { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; border-top: 1px solid var(--line); padding: 26px 0 38px; color: var(--muted); font-size: 12px; }
-.site-footer div { display: flex; gap: 24px; }
 .site-footer a { text-decoration: none; display: inline-block; padding: 8px 0; }
 .site-footer a:hover { text-decoration: underline; }
 .skip-link { position: absolute; z-index: 2; top: -80px; left: 16px; padding: 10px 16px; background: var(--paper); color: var(--ink); }

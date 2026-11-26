@@ -8,17 +8,17 @@ layout: default
   <div class="profile-links" aria-label="Contact and profiles">
     {% if site.data.profile.email and site.data.profile.email != '' %}<a class="email" href="mailto:{{ site.data.profile.email | escape }}">{{ site.data.profile.email | escape }}</a>{% else %}<span class="email unset" aria-disabled="true">you@example.com</span>{% endif %}
     <span class="link-divider" aria-hidden="true"></span>
-    {% if site.data.profile.resume and site.data.profile.resume != '' %}<a href="{{ site.data.profile.resume | relative_url | escape }}">Resume <span aria-hidden="true">↗</span></a>{% else %}<span class="unset" aria-disabled="true">Resume <span aria-hidden="true">↗</span></span>{% endif %}
-    {% if site.data.profile.github and site.data.profile.github != '' %}<a href="{{ site.data.profile.github | escape }}">GitHub <span aria-hidden="true">↗</span></a>{% else %}<span class="unset" aria-disabled="true">GitHub <span aria-hidden="true">↗</span></span>{% endif %}
-    {% if site.data.profile.linkedin and site.data.profile.linkedin != '' %}<a href="{{ site.data.profile.linkedin | escape }}">LinkedIn <span aria-hidden="true">↗</span></a>{% else %}<span class="unset" aria-disabled="true">LinkedIn <span aria-hidden="true">↗</span></span>{% endif %}
+    {% if site.data.profile.resume and site.data.profile.resume != '' %}<a href="{{ site.data.profile.resume | relative_url | escape }}">Resume</a>{% else %}<span class="unset" aria-disabled="true">Resume</span>{% endif %}
+    {% if site.data.profile.github and site.data.profile.github != '' %}<a href="{{ site.data.profile.github | escape }}">GitHub</a>{% else %}<span class="unset" aria-disabled="true">GitHub</span>{% endif %}
+    {% if site.data.profile.linkedin and site.data.profile.linkedin != '' %}<a href="{{ site.data.profile.linkedin | escape }}">LinkedIn</a>{% else %}<span class="unset" aria-disabled="true">LinkedIn</span>{% endif %}
   </div>
 </section>
 <section id="about" class="content-section" aria-labelledby="about-title">
-  <div class="section-heading"><h2 id="about-title">About me</h2><span class="section-index" aria-hidden="true">01</span></div>
+  <div class="section-heading"><h2 id="about-title">About me</h2></div>
   <div class="prose about-copy">{% capture about %}{% include about.md %}{% endcapture %}{{ about | markdownify }}</div>
 </section>
 <section id="posts" class="content-section" aria-labelledby="posts-title">
-  <div class="section-heading"><h2 id="posts-title">Posts &amp; work</h2><span class="section-index" aria-hidden="true">02</span></div>
+  <div class="section-heading"><h2 id="posts-title">Posts &amp; work</h2></div>
   <p class="section-intro">Notes, projects, and things worth sharing.</p>
   {% if site.posts.size > 0 %}
     {% assign featured = site.posts | where: 'featured', true %}

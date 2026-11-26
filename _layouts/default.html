@@ -28,7 +28,7 @@
       </div>
     </header>
     <main id="main" tabindex="-1">{{ content }}</main>
-    <footer class="site-footer"><span>© {{ site.time | date: '%Y' }} {{ site.data.profile.name | escape }}</span><div>{% if site.posts.size > 0 %}<a href="{{ '/feed.xml' | relative_url }}">RSS</a>{% endif %}<a href="#top">Back to top <span aria-hidden="true">↑</span></a></div></footer>
+    <footer class="site-footer"><span>© {{ site.time | date: '%Y' }} {{ site.data.profile.name | escape }}</span>{% if site.posts.size > 0 %}<a href="{{ '/feed.xml' | relative_url }}">RSS</a>{% endif %}</footer>
   </div>
 </body>
 </html>
