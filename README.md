@@ -1,13 +1,14 @@
 # A small personal site
 
 A minimal software engineer portfolio for GitHub Pages. Jekyll turns Markdown into
-static HTML. No frontend framework, external fonts, tracking, or cookies. Content
-works without JavaScript; the only script controls the color theme.
+static HTML. No frontend framework, third-party fonts, tracking, or cookies. Content
+works without JavaScript; the only script controls the theme and a few progressive
+enhancements.
 
 ## Make it yours
 
 1. Edit `_data/profile.yml`: name, email, Resume, GitHub, LinkedIn, and introduction.
-   Empty links appear as inactive labels instead of broken links.
+   Empty values are simply left out — no broken links or placeholder buttons.
 2. Edit `_includes/about.md`. Replace the example biography before sharing.
 3. Upload `assets/resume.pdf` and set `resume: /assets/resume.pdf`, or use an HTTPS URL.
 
@@ -48,13 +49,19 @@ python3 -m http.server 4000 --directory _site
 Open <http://localhost:4000>. Add `--drafts` after `build` to preview templates.
 Rebuild after edits. Generated `_site/` is not committed.
 
+If you have Ruby locally, `gem install jekyll` then `jekyll serve --drafts` gives
+live reload instead. No npm install or asset build step is needed: the CSS and the
+Inter `woff2` are committed.
+
 ## Design
 
-- System fonts, semantic HTML, native links and a native theme selector.
-- System theme by default. Light/Dark overrides persist locally when storage is available.
-- Without JavaScript, content and links work and the OS theme is respected.
+- JetKVM-inspired: a white sheet on a light canvas, dashed side rails, a compact
+  48px header, and a blue accent.
+- Inter, self-hosted as one subsetted variable `woff2` (SIL OFL, see
+  `assets/fonts/OFL.txt`). No third-party font requests.
+- System theme by default. The Auto/Light/Dark picker persists locally when storage
+  is available; light and dark share one token set.
 - Keyboard focus, skip link, responsive layout, reduced motion, and print styles.
-- No container queries, `:has()`, view transitions, remote fonts, or client rendering.
-  Older browsers without theme media queries receive the light theme.
-
-Styles live in `assets/style.css`; appearance behavior lives in `assets/theme.js`.
+- Progressive enhancement: content and links work without JavaScript. The theme
+  picker, scroll reveals, reading progress line, and sticky post bar need it.
+- Styles live in `assets/style.css`; behavior lives in `assets/theme.js`.

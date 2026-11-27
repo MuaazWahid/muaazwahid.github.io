@@ -2,16 +2,24 @@
 layout: default
 ---
 <article class="article">
-  <a class="back-link" href="{{ '/#posts' | relative_url }}">← Back to posts</a>
-  <header class="article-header">
-    <p class="eyebrow">{{ page.kind | default: 'Note' | escape }}<span aria-hidden="true"> / </span><time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%B %-d, %Y' }}</time></p>
+  <a class="back-link" href="{{ '/#posts' | relative_url }}">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5m6-6-6 6 6 6"/></svg>
+    Back to posts
+  </a>
+  <header class="article-header" data-article-header>
+    <p class="eyebrow">
+      <span>{{ page.kind | default: 'Note' | escape }}</span>
+      <span class="sep" aria-hidden="true">/</span>
+      <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%B %-d, %Y' }}</time>
+    </p>
     <h1>{{ page.title | escape }}</h1>
     {% if page.description %}<p class="article-description">{{ page.description | escape }}</p>{% endif %}
-    {% if page.project_url and page.project_url != '' %}<a class="text-link" href="{{ page.project_url | escape }}">View project ↗</a>{% endif %}
+    {% if page.project_url and page.project_url != '' %}
+    <a class="btn btn--ghost btn--sm" href="{{ page.project_url | escape }}">
+      View project
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
+    </a>
+    {% endif %}
   </header>
   <div class="prose article-body">{{ content }}</div>
-  <nav class="post-navigation" aria-label="More posts">
-    {% if page.previous %}<a href="{{ page.previous.url | relative_url }}"><span>← Older post</span>{{ page.previous.title | escape }}</a>{% endif %}
-    {% if page.next %}<a href="{{ page.next.url | relative_url }}"><span>Newer post →</span>{{ page.next.title | escape }}</a>{% endif %}
-  </nav>
 </article>
